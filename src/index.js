@@ -10,6 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import Courses from "./components/Courses";
 import Boundles from "./components/Boundles";
+import Dashboard from "./components/Dashboard";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,6 +27,7 @@ ReactDOM.render(
           </Route>
           <Route path="bundles" element={<Boundles />} />
         </Route>
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

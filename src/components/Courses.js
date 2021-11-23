@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet, NavLink } from "react-router-dom";
 
 const Courses = () => {
-  const courseList = ["Reac", "Angular", "Vue", "NodeJs"];
-  const randomCourseName =
-    courseList[Math.floor(Math.random() * courseList.length)];
+  const courseList = ["React", "Angular", "Vue", "NodeJs"];
+  const [courseName, setCourseName] = useState(null);
+  useEffect(() => {
+    setCourseName(courseList[Math.floor(Math.random() * courseList.length)]);
+  }, []);
 
   return (
     <>
@@ -13,8 +15,19 @@ const Courses = () => {
       </div>
       {/* NavLinks need whole path /learn/course/...*/}
 
-      <NavLink to={`/learn/courses/${randomCourseName}`}>
-        {randomCourseName}
+      <NavLink
+        style={({ isActive }) => {
+          return {
+            backgroundColor: isActive ? "lightgreen" : "yellow"
+          };
+        }}
+        to={`/learn/courses/${courseName}`}
+        className="btn btn-light"
+      >
+        {courseName}
+      </NavLink>
+      <NavLink to={`/learn/courses/test`} className={"btn btn-light"}>
+        test
       </NavLink>
 
       <Outlet></Outlet>

@@ -7,20 +7,12 @@ export const Learn = () => {
       {/* difference between a tag and <Link/>: */}
       {/* a tag reloads the page -> link tag doesen't */}
 
-      <Link to="/learn/courses">
-        <button
-          style={{ color: "black", textDecoration: "none", cursor: "pointer" }}
-        >
-          courses
-        </button>
+      <Link to="/learn/courses" className="btn btn-light">
+        courses
       </Link>
 
-      <Link to="/learn/bundles">
-        <button
-          style={{ color: "black", textDecoration: "none", cursor: "pointer" }}
-        >
-          bundle
-        </button>
+      <Link to="/learn/bundles" className="btn btn-light">
+        bundle
       </Link>
 
       {/* renders the element on the url */}
